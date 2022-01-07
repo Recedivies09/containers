@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis_data:/data
+    container_name: be-redis
+    # healthcheck:
+    #   test: ["CMD", "redis-cli", "ping"]
+    #   interval: 1s
+    #   timeout: 5s
+    #   retries: 5
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./mongo_data:/data/db
+    # healthcheck:
+    #   test: ["CMD", "docker-healthcheck"]
+    #   interval: 30s
+    #   timeout: s
+    #   retries: 3
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    container_name: be-mongodb
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo localhost:3456/the_database --quiet
+      interval: 1s
+      timeout: 5s
+      retries: 5
+
+  express-app:
+    image: be-dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    # depends_on:
+    #   redis:
+    #     condition: service_healthy
+    #   mongo:
+    #     condition: service_healthy
+    ports:
+      - 3001:3000
+    environment:
+      - REDIS_HOST=redis
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+    container_name: be-dev
+volumes:
+  mongo_data:

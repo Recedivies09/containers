@@ -1,0 +1,68 @@
+version: "3.8"
+
+services:
+  backend:
+    image: be-dev
+    build:
+      context: ./todo-backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./todo-backend/:/usr/src/app
+    ports:
+      - 3001:3001
+    depends_on:
+      - redis
+      - mongo
+    container_name: be-dev
+    environment:
+      - REDIS_HOST=redis
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+
+  frontend:
+    image: fe-dev
+    build:
+      context: ./todo-frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./todo-frontend/:/usr/src/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+    container_name: fe-dev
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:3001
+
+  nginx:
+    depends_on:
+      - frontend
+      - backend
+    restart: always
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8000:80
+    container_name: reverse-proxy
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ./todo-backend/redis_data:/data
+    container_name: be-redis
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./todo-backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./todo-backend/mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    container_name: be-mongodb

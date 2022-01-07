@@ -1,0 +1,22 @@
+Script started on 2021-10-22 18:45:15+07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="143" LINES="38"]
+]0;recedivies@ubuntu-asus: ~/project/part12-containers-applications/script-answers[01;32mrecedivies@ubuntu-asus[00m:[01;34m~/project/part12-containers-applications/script-answers[00m$ docker ps -a[K[K[K[K[Kd[Kcontainer ps -[K[K[K[Kls -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                         PORTS     NAMES
+3f1da2f3381c   ubuntu        "bash"                   46 minutes ago      Exited (0) 4 minutes ago                 condescending_bose
+49cf53c27735   ubuntu        "bash"                   46 minutes ago      Exited (0) 4 minutes ago                 adoring_cannon
+8820597ccc4f   ubuntu        "bash"                   51 minutes ago      Exited (0) 27 seconds ago                jovial_newton
+de562864dbcb   ubuntu        "bash"                   52 minutes ago      Exited (0) 52 minutes ago                romantic_grothendieck
+ce25e14f7e7b   ubuntu        "bash"                   52 minutes ago      Exited (0) 52 minutes ago                nostalgic_shaw
+bf672bd8795b   ubuntu        "-it"                    52 minutes ago      Created                                  sharp_ganguly
+c3bce0154bbe   ubuntu        "/bin/bash"              54 minutes ago      Exited (0) 54 minutes ago                reverent_ritchie
+1f520ed765c7   ubuntu        "/bin/bash"              54 minutes ago      Exited (0) 54 minutes ago                musing_cori
+d298af2fcb79   bash          "docker-entrypoint.s…"   55 minutes ago      Exited (127) 55 minutes ago              frosty_jennings
+04825140bef4   ubuntu        "bash"                   About an hour ago   Exited (0) About an hour ago             compassionate_lehmann
+76216a4a5894   hello-world   "/hello"                 About an hour ago   Exited (0) About an hour ago             dreamy_dhawan
+]0;recedivies@ubuntu-asus: ~/project/part12-containers-applications/script-answers[01;32mrecedivies@ubuntu-asus[00m:[01;34m~/project/part12-containers-applications/script-answers[00m$ docker start -i jovial_newton 
+]0;root@8820597ccc4f: /root@8820597ccc4f:/# [K]0;root@8820597ccc4f: /root@8820597ccc4f:/# nano /usr/src/app/index.js 
+[?2004h[?1049h[22;0;0t[1;38r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[36;65H(B[0;7m[ Reading... ](B[m[36;64H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                 /usr/src/app/index.js                                                           [1;142H(B[m[37d(B[0;7m^G(B[m Get Help    (B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut Text    (B[0;7m^J(B[m Justify     (B[0;7m^C(B[m Cur Pos     (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Mark Text  (B[0;7mM-](B[m To Bracket[38d(B[0;7m^X(B[m Exit[38;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste Text  (B[0;7m^T(B[m To Spell    (B[0;7m^_(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy Text  (B[0;7m^Q(B[m Where Was[36d[2d[39;49m(B[m[?12l[?25h[?25l[1;134H(B[0;7mModified(B[m[2dc[?12l[?25h[?25lo[?12l[?25h[?25ln[?12l[?25h[?25ls[?12l[?25h[?25lo[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25l.[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25lg[?12l[?25h[?25l([?12l[?25h[?25l"[?12l[?25h[?25lH[?12l[?25h[?25le[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l W[?12l[?25h[?25lO[?12l[?25h[?25l [?12l[?25h[?25lo[?12l[?25h[?25lr[?12l[?25h[?25ll[?12l[?25h[?25ld[36d[K[2;25H[?12l[?25h[?25l[2;13H(B[0;1m[35m"Hello World"[39m(B[m[?12l[?25h[?25l)[?12l[?25h[?25l[36;65H(B[0;7m[ Writing... ](B[m[1;134H(B[0;7m        (B[m[36;64H(B[0;7m[ Wrote 1 line ](B[m[2;27H[?12l[?25h[?25l[36d[J[38d[?12l[?25h[38;1H[?1049l[23;0;0t[?1l>[?2004l]0;root@8820597ccc4f: /root@8820597ccc4f:/# [Kexit
+exit
+]0;recedivies@ubuntu-asus: ~/project/part12-containers-applications/script-answers[01;32mrecedivies@ubuntu-asus[00m:[01;34m~/project/part12-containers-applications/script-answers[00m$ exit
+exit
+
+Script done on 2021-10-22 18:45:54+07:00 [COMMAND_EXIT_CODE="0"]

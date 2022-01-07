@@ -1,0 +1,12 @@
+Script started on 2021-10-22 17:53:31+07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="143" LINES="38"]
+]0;recedivies@ubuntu-asus: ~/project/part12-containers-applications/script-answers[01;32mrecedivies@ubuntu-asus[00m:[01;34m~/project/part12-containers-applications/script-answers[00m$ docker run -i -t ubuntu /bin/bash[K[K[K[K[K[K[K[K[K[K[1P ubuntu[1P ubuntu[1Pubuntut ubuntu
+]0;root@8820597ccc4f: /root@8820597ccc4f:/# [K]0;root@8820597ccc4f: /root@8820597ccc4f:/# mkdir //u  usr/
+bin/     games/   include/ lib/     lib32/   lib64/   libx32/  local/   sbin/    share/   src/     
+]0;root@8820597ccc4f: /root@8820597ccc4f:/# mkdir /usr/src/app
+]0;root@8820597ccc4f: /root@8820597ccc4f:/# tohc  uch /usr/src/app/index.js
+]0;root@8820597ccc4f: /root@8820597ccc4f:/# [Kexit
+exit
+]0;recedivies@ubuntu-asus: ~/project/part12-containers-applications/script-answers[01;32mrecedivies@ubuntu-asus[00m:[01;34m~/project/part12-containers-applications/script-answers[00m$ exit
+exit
+
+Script done on 2021-10-22 17:54:24+07:00 [COMMAND_EXIT_CODE="0"]
